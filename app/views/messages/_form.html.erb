@@ -1,8 +1,12 @@
-<%= form_with url: conversation_messages_path, model: @message do |m| %>
-    <%= m.label :text%>
-    <%= m.text_field :text %>
+<%= form_with url: conversation_messages_path, model: @message , class: 'form-create' do |m| %>
+    <div class='form-create-text'>
+        <%= m.label :text%>
+        <%= m.text_area :text %>
+    </div>
 
-    <%= m.label :sent_date%>
-    <%= m.date_field :sent_date %>
-    <%= m.submit "Submit" %>
+    <div class='form-create-date'>
+        <%= m.label :sent_date%>
+        <%= m.date_field :sent_date %>
+        <%= m.submit "Submit" %>
+    </div>
 <% end %>

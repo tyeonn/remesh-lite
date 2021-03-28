@@ -1,9 +1,12 @@
+<%= form_with model: @conversation , class: 'form-create' do |c| %>
+    <div class='form-create-text'>
+        <%= c.label :title%>
+        <%= c.text_area :title %>
+    </div>
 
-<%= form_with model: @conversation do |c| %>
-    <%= c.label :title%>
-    <%= c.text_field :title %>
-
-    <%= c.label :start_date%>
-    <%= c.date_field :start_date %>
-    <%= c.submit "Submit" %>
+    <div class='form-create-date'>
+        <%= c.label :start_date%>
+        <%= c.date_field :start_date %>
+        <%= c.submit "Submit" %>
+    </div>
 <% end %>

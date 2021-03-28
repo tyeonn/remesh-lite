@@ -1,15 +1,19 @@
-<div>
-    <h2><%= @messages.first.c_title %></h2>
-    <%= @messages.first.c_date.strftime('%m-%d-%Y')%>
-    <%= link_to "Create Message", new_conversation_message_path%>
-    <%= render partial: "search" %>
+<div class='conv-container'>
+    <div class='sub-header-msg'>
+        <h2><%= @messages.first.c_title %></h2>
+        <div class='date'>
+            <%= @messages.first.c_date.strftime('%m-%d-%Y')%>
+        </div>
+        <%= link_to "Create Message", new_conversation_message_path, class: 'link' %>
+        <%= render partial: "search" %>
+    </div>
     <% if @search_msg %>
         <h3>Searched for: <%= @search_msg[1..-2]%></h3>
     <% end %>
     <ul>
         <% @messages.each do |m| %>
-            <%= link_to conversation_message_path(m.conversation_id, m) do %>
-                <div>
+            <%= link_to conversation_message_path(m.conversation_id, m), class: 'link-block' do %>
+                <div class='link-block-container'>
                     <li><%=m.text%></li>
                     <li><%=m.sent_date.strftime('%m-%d-%Y')%></li>
                     <li>Number of Thoughts: <%=m.thoughts.count()%> </li>

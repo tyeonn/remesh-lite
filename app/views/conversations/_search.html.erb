@@ -1,5 +1,4 @@
-<%= form_with url: "/", method: :get do |form| %>
-    <%= form.label :search, 'Search Convo'%>
+<%= form_with url: "/", method: :get, class: 'form' do |form| %>
     <%= form.text_field :search %>
     <%= form.submit "Search" %>
 <% end %>
