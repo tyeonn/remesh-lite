@@ -1,0 +1,19 @@
+<div>
+    <h2>Conversations</h2>
+    <%= link_to "Create", new_conversation_path%>
+    <%= render partial: "search" %>
+    <% if @search %>
+        <h3>Searched for: <%= @search[1..-2]%></h3>
+    <% end %>
+    <ul>
+        <% @conversations.each do |c| %>
+            <%= link_to conversation_path(c) do %>
+                <div>
+                    <li><%=c.title%></li>
+                    <li><%=c.start_date.strftime('%m-%d-%Y')%></li>
+                    <li>Number of Msgs: <%=c.messages.size %></li> 
+                </div>
+            <% end %>
+        <% end %>
+    </ul>
+</div>

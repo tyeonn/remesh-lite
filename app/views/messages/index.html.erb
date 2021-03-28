@@ -1,0 +1,20 @@
+<div>
+    <h2><%= @messages.first.c_title %></h2>
+    <%= @messages.first.c_date.strftime('%m-%d-%Y')%>
+    <%= link_to "Create Message", new_conversation_message_path%>
+    <%= render partial: "search" %>
+    <% if @search_msg %>
+        <h3>Searched for: <%= @search_msg[1..-2]%></h3>
+    <% end %>
+    <ul>
+        <% @messages.each do |m| %>
+            <%= link_to conversation_message_path(m.conversation_id, m) do %>
+                <div>
+                    <li><%=m.text%></li>
+                    <li><%=m.sent_date.strftime('%m-%d-%Y')%></li>
+                    <li>Number of Thoughts: <%=m.thoughts.count()%> </li>
+                </div>
+            <% end %>
+        <% end %>
+    </ul>
+</div>

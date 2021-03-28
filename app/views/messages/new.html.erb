@@ -1,0 +1,14 @@
+<div>
+    <h2>Create Message</h2>
+    <%= render partial: "form" %>
+    <% if @errors.present? %>
+        <div class="errors">
+            <ul>
+                <% @errors.each do |e| %>
+                    <li><%= e %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+</div>    

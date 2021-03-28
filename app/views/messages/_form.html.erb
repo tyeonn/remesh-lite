@@ -1,0 +1,8 @@
+<%= form_with url: conversation_messages_path, model: @message do |m| %>
+    <%= m.label :text%>
+    <%= m.text_field :text %>
+
+    <%= m.label :sent_date%>
+    <%= m.date_field :sent_date %>
+    <%= m.submit "Submit" %>
+<% end %>

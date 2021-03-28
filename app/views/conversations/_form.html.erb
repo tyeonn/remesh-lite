@@ -1,0 +1,9 @@
+
+<%= form_with model: @conversation do |c| %>
+    <%= c.label :title%>
+    <%= c.text_field :title %>
+
+    <%= c.label :start_date%>
+    <%= c.date_field :start_date %>
+    <%= c.submit "Submit" %>
+<% end %>
