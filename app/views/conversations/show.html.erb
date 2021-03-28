@@ -18,7 +18,7 @@
             <%= link_to conversation_message_path(@conversation, m), class: 'link-block' do %>
                 <div class='link-block-container'>
                     <li><%=m.text%></li>
-                    <li><%=m.sent_date.strftime('%m-%d-%Y')%></li>
+                    <li><%=m.sent_date.strftime('%m-%d-%Y %H:%M %p')%></li>
                     <li>Number of Thoughts: <%=m.thoughts.count()%> </li>
                 </div>
             <% end %>

@@ -3,7 +3,7 @@
     <div class='sub-header-msg'>
         <h2><%= @message.text %></h2>
         <div class='date'>
-            <%= @message.sent_date.strftime('%m-%d-%Y')%>
+            <%= @message.sent_date.strftime('%m-%d-%Y %H:%M %p')%>
         </div>
         <%= link_to "Create Thought", new_conversation_message_thought_path(@message.conversation_id, @message), class: 'link' %>
     </div>
@@ -12,7 +12,7 @@
         <% @sorted_thoughts.each do |t| %>
             <div class='link-block-container'>
                 <li><%=t.text%></li>
-                <li><%=t.sent_date.strftime('%m-%d-%Y')%></li>
+                <li><%=t.sent_date.strftime('%m-%d-%Y %H:%M %p')%></li>
             </div>
         <% end %>
     </ul>
