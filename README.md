@@ -23,6 +23,7 @@ For node: `brew install node` or `brew upgrade node`
 3. run `rails db:setup`
 4. run `bundle exec rails s`
 5. open http://localhost:3000/ in browser (preferably chrome)
+6. If you get a webpacker error, close the server and try `bundle exec rails webpacker:install` then restart server (step 4)
 
 ### Remesh lite
 Search is based on any matches, for example, if you have a conversation called 'hello', searching for 'e' will find it.
