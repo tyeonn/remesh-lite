@@ -27,7 +27,16 @@ module RemeshLite
     config.load_defaults 6.1
 
     # Configuration for the application, engines, and railties goes here.
-    #
+    config.generators do |generate|
+      generate.test_framework  :rspec,
+            fixtures: true,
+            view_specs: true,
+            helper_specs: false,
+            routing_specs: true,
+            controller_specs: true,
+            request_specs: true
+      generate.fixture_replacement :factory_bot, dir: "spec/factories"
+    end
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #

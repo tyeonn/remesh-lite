@@ -40,8 +40,8 @@ class ConversationsController < ApplicationController
   end
 
   private
+  
   def conversation_params
-    puts params
     params.require(:conversation).permit(
       :title, :start_date
     )

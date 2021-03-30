@@ -9,9 +9,9 @@
 #  updated_at :datetime         not null
 #  message_id :integer          not null
 #
-class Thought < ApplicationRecord
-    validates :text, :sent_date, :message_id, presence: true
-    belongs_to :message
+FactoryBot.define do
+  factory :thought do
+    text { Faker::Food.description }
+    sent_date { Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :default) }
+  end
 end
-
-                
