@@ -1,5 +1,4 @@
 <%= form_with url: conversation_messages_path(@conversation), method: :get, class: 'form' do |form| %>
-    
     <%= form.text_field :search_msg %>
     <%= form.submit "Search" %>
 <% end %>

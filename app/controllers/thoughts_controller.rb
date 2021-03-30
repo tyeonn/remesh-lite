@@ -1,5 +1,4 @@
 class ThoughtsController < ApplicationController
-
   def new
     @thought = Thought.new
   end
@@ -7,7 +6,6 @@ class ThoughtsController < ApplicationController
   def create
     @thought = Thought.new(thought_params)
     @thought.message_id = params[:message_id]
-
     if @thought.save
       redirect_to conversation_message_path(params[:conversation_id], params[:message_id])
     else
@@ -16,8 +14,8 @@ class ThoughtsController < ApplicationController
     end
   end
 
-
   private
+  
   def thought_params
     params.require(:thought).permit(:text, :sent_date)
   end

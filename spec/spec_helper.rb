@@ -101,6 +101,7 @@ def create_convo(t, date)
   fill_in 'conversation_start_date', with: date
   click_on 'Submit'
 end
+
 def create_msg(t, date, c_id)
   # create_convo('tim', Date.today)
   visit("/conversations/#{c_id}/messages/new")
@@ -108,6 +109,7 @@ def create_msg(t, date, c_id)
   fill_in 'message_sent_date', with: date
   click_on 'Submit'
 end
+
 def create_thought(t, date, c_id, m_id)
   visit("/conversations/#{c_id}/messages/#{m_id}/thoughts/new")
   fill_in 'thought_text', with: t

@@ -9,6 +9,7 @@ RSpec.describe MessagesController, type: :controller do
       expect(response.status).to eq(200)
     end
   end
+
   describe 'GET #show' do
     it 'renders message show' do
       c = Conversation.create(title:'hi', start_date: Date.today)
@@ -17,6 +18,7 @@ RSpec.describe MessagesController, type: :controller do
       expect(response.status).to eq(200)
     end
   end
+
   describe 'POST #create' do
     context 'with invalid params' do
       it 'raises an exception' do
@@ -34,7 +36,6 @@ RSpec.describe MessagesController, type: :controller do
           },
           conversation_id: c.id
         }
-
         expect(response).to redirect_to(conversation_path(c.id))
       end
     end

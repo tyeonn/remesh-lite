@@ -11,9 +11,7 @@
 #
 class Message < ApplicationRecord
     validates :text, :sent_date, :conversation_id, presence: true
-
     belongs_to :conversation
-
     has_many :thoughts, dependent: :destroy
 end
 

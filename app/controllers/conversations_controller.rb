@@ -46,5 +46,4 @@ class ConversationsController < ApplicationController
       :title, :start_date
     )
   end
-
 end

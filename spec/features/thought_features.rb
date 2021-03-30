@@ -7,6 +7,7 @@ feature 'thought features', type: :feature do
       c = Conversation.find_by(title: 'tim')
       create_msg('hi', Date.today, c.id)
     end
+
     scenario 'with invalid params' do 
       c = Conversation.find_by(title: 'tim')
       m = Message.find_by(text: 'hi')
@@ -18,14 +19,11 @@ feature 'thought features', type: :feature do
       c = Conversation.find_by(title: 'tim')
       m = Message.find_by(text: 'hi')
       create_thought('thought test', Date.today, c.id, m.id)
-      save_and_open_page
-      
+      # save_and_open_page
       expect(current_path).to eq("/conversations/#{c.id}/messages/#{m.id}")
       expect(page).to have_content("thought test")
     end
-  end
-  
 
-  
+  end
 
 end

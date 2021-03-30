@@ -10,7 +10,5 @@
 #
 class Conversation < ApplicationRecord
   validates :title, :start_date, presence: true
-      
   has_many :messages, dependent: :destroy
-            
 end

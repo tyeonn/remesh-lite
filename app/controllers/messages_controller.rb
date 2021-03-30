@@ -16,9 +16,7 @@ class MessagesController < ApplicationController
       end
     else
       redirect_to conversation_path(params[:conversation_id])
-      
     end
-    
   end
 
   def new
@@ -48,8 +46,8 @@ class MessagesController < ApplicationController
     end
   end
 
-
   private
+
   def message_params
     params.require(:message).permit(:text, :sent_date)
   end

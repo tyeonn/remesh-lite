@@ -2,7 +2,6 @@ require 'rails_helper'
 
 feature 'conversation features', type: :feature do
   feature 'make new conversation' do 
-
     scenario 'with invalid params' do 
       create_convo('tim', nil)
       expect(current_path).to eq('/conversations')
@@ -11,11 +10,10 @@ feature 'conversation features', type: :feature do
     
     scenario 'with valid params' do
       create_convo('tim', Date.today)
-      # save_and_open_page
-      
       expect(current_path).to eq("/conversations/#{Conversation.find_by(title: 'tim').id}")
       expect(page).to have_content("tim")
     end
+
   end
   
   feature 'search for conversation' do
@@ -23,6 +21,7 @@ feature 'conversation features', type: :feature do
       create_convo('hello', Date.today)
       visit('/')
     end
+
     scenario 'Search for e when Conversation hello exists' do
       fill_in 'search', with: 'e'
       click_on 'commit'
@@ -38,7 +37,6 @@ feature 'conversation features', type: :feature do
       expect(page).to have_content("apple")
     end
 
-  
   end
 
 end

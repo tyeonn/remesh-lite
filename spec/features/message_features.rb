@@ -5,6 +5,7 @@ feature 'message features', type: :feature do
     before(:each) do
       create_convo('tim', Date.today)
     end
+
     scenario 'with invalid params' do 
       c = Conversation.find_by(title: 'tim')
       create_msg('hi', nil, c.id)
@@ -15,11 +16,10 @@ feature 'message features', type: :feature do
     scenario 'with valid params' do
       c = Conversation.find_by(title: 'tim')
       create_msg('hi', Date.today, c.id)
-      # save_and_open_page
-      
       expect(current_path).to eq("/conversations/#{c.id}")
       expect(page).to have_content("hi")
     end
+
   end
   
   feature 'search for msg' do
@@ -44,7 +44,6 @@ feature 'message features', type: :feature do
       expect(page).to have_content("apple")
     end
 
-  
   end
 
 end

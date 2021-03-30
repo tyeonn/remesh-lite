@@ -11,7 +11,6 @@
 require 'rails_helper'
 
 RSpec.describe Conversation, type: :model do
- 
   subject(:conversation) {FactoryBot.build(:conversation)}
   
   describe 'validations' do

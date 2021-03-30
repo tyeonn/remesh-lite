@@ -12,7 +12,6 @@
 require 'rails_helper'
 
 RSpec.describe Thought, type: :model do
-
   subject(:thought) {FactoryBot.build(:thought)}
   
   describe 'validations' do
